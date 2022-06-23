@@ -17,56 +17,86 @@
     box-sizing: border-box;
 }
 
-.bg-0{
-    background: url("../Assets/Environnement/grass.png") no-repeat;
+.gr-0{
+    background: url("../Assets/Environnement/grass_0.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-1{
-    background: url("../Assets/Environnement/grass_plant.png") no-repeat;
+.gr-1{
+    background: url("../Assets/Environnement/grass_1.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-2{
-    background: url("../Assets/Environnement/grass_plants.png") no-repeat;
+.gr-2{
+    background: url("../Assets/Environnement/grass_2.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-3{
-    background: url("../Assets/Environnement/grass_plants_white.png") no-repeat;
+.gr-3{
+    background: url("../Assets/Environnement/grass_3.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-4{
-    background: url("../Assets/Environnement/grass_rock.png") no-repeat;
+.gr-4{
+    background: url("../Assets/Environnement/grass_4.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-5{
-    background: url("../Assets/Environnement/grass_rock_1_damaged.png") no-repeat;
+.gr-5{
+    background: url("../Assets/Environnement/grass_5.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-6{
-    background: url("../Assets/Environnement/grass_rock_2_damaged.png") no-repeat;
+.gr-6{
+    background: url("../Assets/Environnement/grass_6.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-7{
-    background: url("../Assets/Environnement/grass_rock_3_damaged.png") no-repeat;
+.pt-0{
+    background: url("../Assets/Environnement/path_0.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.bg-8{
-    background: url("../Assets/Environnement/grass_rock_4_damaged.png") no-repeat;
+.pt-1{
+    background: url("../Assets/Environnement/path_1.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pt-2{
+    background: url("../Assets/Environnement/path_2.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pt-3{
+    background: url("../Assets/Environnement/path_3.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pt-4{
+    background: url("../Assets/Environnement/path_4.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pt-5{
+    background: url("../Assets/Environnement/path_5.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pt-6{
+    background: url("../Assets/Environnement/path_6.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
