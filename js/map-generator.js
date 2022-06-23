@@ -1,6 +1,9 @@
 class Map {
     constructor(dimension) {
         this.dimension = dimension;
+        this.width = dimension;
+        this.height = dimension;
+        this.personnage;
     }
 
     create() {
@@ -19,14 +22,23 @@ class Map {
     }
 
     initPersonnage(){
-        let perso = new Personnage("Pipou", Math.floor(dimension / 2), dimension - 1);
+        let perso = new Personnage("Pipou", Math.floor(dimension / 2), dimension - 1, this);
         let caseInit = document.getElementById(perso.y + "-" + perso.x)
         console.log(caseInit);
         let divPerso = document.createElement('div');
         divPerso.setAttribute('id', 'perso');
         caseInit.appendChild(divPerso);
+        this.personnage = perso;
         return perso;
     }
+
+    initEventListeners(){
+        window.addEventListener("keyup", event => {
+            this.personnage.move(event.key);
+        });
+           
+    }
+    
     
 
 }
