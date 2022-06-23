@@ -1,0 +1,17 @@
+#game table tr td {
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+}
+
+#game table {
+    border-collapse: collapse;
+}
+
+#perso {
+    height: 100%;
+    width: 100%;
+    background: url("../Sprites/character/Character_Idle_1.png") no-repeat;
+    background-position: center;
+    background-size: cover
+}
