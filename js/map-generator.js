@@ -28,5 +28,13 @@ class Map {
         return perso;
     }
     
+    populateBackground(){
+        let backgroundGen = 0;
+        console.log(document.getElementsByTagName("td"));
+        Array.from(document.getElementsByTagName("td")).forEach((e) => {
+            backgroundGen = "bg-" + Math.floor(Math.random() * 9);
+            e.classList.add(backgroundGen);
+        })
+    }
 
 }
