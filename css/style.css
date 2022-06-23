@@ -11,7 +11,61 @@
 #perso {
     height: 100%;
     width: 100%;
-    background: url("../Sprites/character/Character_Idle_1.png") no-repeat;
+    background: url("../Assets/Character/Character_Idle_1.png") no-repeat;
     background-position: center;
     background-size: cover
+}
+
+.bg-0{
+    background: url("../Assets/Environnement/grass.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-1{
+    background: url("../Assets/Environnement/grass_plant.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-2{
+    background: url("../Assets/Environnement/grass_plants.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-3{
+    background: url("../Assets/Environnement/grass_plants_white.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-4{
+    background: url("../Assets/Environnement/grass_rock.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-5{
+    background: url("../Assets/Environnement/grass_rock_1_damaged.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-6{
+    background: url("../Assets/Environnement/grass_rock_2_damaged.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-7{
+    background: url("../Assets/Environnement/grass_rock_3_damaged.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-8{
+    background: url("../Assets/Environnement/grass_rock_4_damaged.png") no-repeat;
+    background-position: center;
+    background-size: cover;
 }
