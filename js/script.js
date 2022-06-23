@@ -3,3 +3,4 @@ let map = new Map(dimension);
 map.create();
 let personnage = map.initPersonnage();
 map.initEventListeners();
+map.populateBackground();
