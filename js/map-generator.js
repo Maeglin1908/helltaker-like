@@ -44,9 +44,13 @@ class Map {
         let backgroundGen = 0;
         Array.from(document.getElementsByTagName("td")).forEach((e) => {
             let [x,y] = e.id.split("-");
-            let grassMin = Math.floor(width/3);
+            let grassMin = Math.floor(this.width/3);
             let grassMax = grassMin*2;
-            backgroundGen = "bg-" + Math.floor(Math.random() * 7);
+            if(grassMin<=y && y<grassMax){
+                backgroundGen = "pt-" + Math.floor(Math.random() * 7);
+            }else{
+                backgroundGen = "gr-" + Math.floor(Math.random() * 7);
+            }
             e.classList.add(backgroundGen);
         })
     }
