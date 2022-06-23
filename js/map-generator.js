@@ -43,7 +43,10 @@ class Map {
     populateBackground(){
         let backgroundGen = 0;
         Array.from(document.getElementsByTagName("td")).forEach((e) => {
-            backgroundGen = "bg-" + Math.floor(Math.random() * 9);
+            let [x,y] = e.id.split("-");
+            let grassMin = Math.floor(width/3);
+            let grassMax = grassMin*2;
+            backgroundGen = "bg-" + Math.floor(Math.random() * 7);
             e.classList.add(backgroundGen);
         })
     }
