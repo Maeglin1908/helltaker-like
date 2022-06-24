@@ -1,9 +1,9 @@
 class Map {
-    constructor(dimension) {
-        this.dimension = dimension;
-        this.width = dimension;
-        this.height = dimension;
-        this.personnage;
+    constructor(num_lvl) {
+        this.lvlMap = maps[num_lvl];
+        this.dimension = 0;
+        this.width = 0;
+        this.height = 0;
     }
 
     create() {
@@ -14,15 +14,37 @@ class Map {
         let tbody = document.createElement('tbody');
         table.appendChild(tbody);
         terrain.appendChild(table);
-
-        for (let i = 0; i < this.dimension; i++) {
+        let mapLines = this.lvlMap.split('\n');
+        this.height = mapLines.length;
+        this.width = mapLines[0].length;
+        for (let i = 0; i < mapLines.length; i++) {
             let tr = document.createElement('tr');
-            for (let j = 0; j < this.dimension; j++) {
+            tbody.appendChild(tr);
+            for (let j = 0; j < mapLines[i].length; j++) {
+                console.log(i + " " + j);
                 let td = document.createElement('td');
                 td.setAttribute('id', 'case-' + i + '-' + j)
                 tr.appendChild(td);
+                switch (mapLines[i][j]) {
+                    // case "!": // WALL
+
+                    //     break;
+                    case "#": // BLOCK NOT MOVABLE
+                    new Block(i, j, "wall");
+                    break;
+                    case "P": // PLAYER
+                        personnage = new Personnage(j, i);
+                    break;
+                    case "B": // BLOCK MOVABLE
+                    new Block(i, j, "box");
+                    break;
+                    case "E": // EXIT / LADDER
+                    new Block(i, j, "ladder");
+                        break;
+                    default:
+                        break;
+                }
             }
-            tbody.appendChild(tr);
         }
     }
 
@@ -85,32 +107,32 @@ class Map {
             let [, y, x] = e.id.split("-");
             let grassMin = Math.floor(this.width / 3);
             let grassMax = grassMin * 2;
-            if(x!=0&&y==0&&x!=this.width-1){
+            if (x != 0 && y == 0 && x != this.width - 1) {
                 backgroundGen = "wallUp";
                 e.classList.add("block");
-            }else if(y==this.height-1&&x!=0&&x!=this.width-1){
+            } else if (y == this.height - 1 && x != 0 && x != this.width - 1) {
                 e.classList.add("block");
                 backgroundGen = "wallDown";
-            }else if(x==0 && y!=0 && y != this.height-1){
+            } else if (x == 0 && y != 0 && y != this.height - 1) {
                 e.classList.add("block");
                 backgroundGen = "wallLeft";
-            }else if(x==this.width-1 && y!=0&&y!=this.height-1){
+            } else if (x == this.width - 1 && y != 0 && y != this.height - 1) {
                 e.classList.add("block");
                 backgroundGen = "wallRight";
-                e.classList.add("reverse-270");         
-            }else if(x==0 && y==0){
+                e.classList.add("reverse-270");
+            } else if (x == 0 && y == 0) {
                 backgroundGen = "cornerUL";
                 e.classList.add("block");
-            }else if(x==this.width-1 && y==0){
+            } else if (x == this.width - 1 && y == 0) {
                 backgroundGen = "cornerUR";
                 e.classList.add("block");
-            }else if(x==0 && y==this.height-1){
+            } else if (x == 0 && y == this.height - 1) {
                 backgroundGen = "cornerDL";
                 e.classList.add("block");
-            }else if(x==this.width-1 && y==this.height-1){
+            } else if (x == this.width - 1 && y == this.height - 1) {
                 backgroundGen = "cornerDR";
                 e.classList.add("block");
-            }else if (grassMin <= x && x < grassMax) {
+            } else if (grassMin <= x && x < grassMax) {
                 backgroundGen = "pt-" + Math.floor(Math.random() * 7);
             } else {
                 backgroundGen = "gr-" + Math.floor(Math.random() * 7);
@@ -126,7 +148,7 @@ class Map {
             winDiv.setAttribute('id', 'win');
             winDiv.innerHTML = "YOU WIN";
 
-            document.querySelector('#map tbody').appendChild(winDiv);
+            document.body.appendChild(winDiv);
             window.removeEventListener("keyup", handleKeyupEvent);
         }
     }

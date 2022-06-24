@@ -1,10 +1,12 @@
 class Personnage {
-    constructor() {
-        this.x = Math.floor(dimension / 2);
-        this.y = dimension - 1;
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
         let caseInit = document.getElementById('case-' + this.y + "-" + this.x)
         let divPerso = document.createElement('div');
         divPerso.setAttribute('id', 'perso');
+        console.log(divPerso);
+        console.log(caseInit);
         caseInit.appendChild(divPerso);
     }
 
