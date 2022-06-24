@@ -1,47 +1,37 @@
 class Personnage {
-    constructor(name, x, y, map) {
-        this.name = name;
-        this.x = x;
-        this.y = y;
+    constructor(map) {
         this.map = map;
+        this.x = Math.floor(dimension / 2);
+        this.y = dimension - 1;
+        let caseInit = document.getElementById('case-' + this.y + "-" + this.x)
+        let divPerso = document.createElement('div');
+        divPerso.setAttribute('id', 'perso');
+        caseInit.appendChild(divPerso);
     }
 
     move(direction) {
         let validMove = true;
+        let newX = this.x;
+        let newY = this.y;
         switch (direction) {
             case "ArrowUp":
-                if (this.y > 0) {
-                    this.y--;
-                } else {
-                    validMove = false;
-                }
+                    newY--;
                 break;
             case "ArrowDown":
-                if (this.y < this.map.height - 1) {
-                    this.y++;
-                } else {
-                    validMove = false;
-                }
+                    newY++;
                 break;
             case "ArrowLeft":
-                if (this.x > 0) {
-                    this.x--;
-                } else {
-                    validMove = false;
-                }
+                    newX--;
                 break;
             case "ArrowRight":
-                if (this.x < this.map.width - 1) {
-                    this.x++;
-                } else {
-                    validMove = false;
-                }
+                    newX++;
                 break;
             default:
-                    validMove = false;
                 break;
         }
-        if(validMove){
+        if(this.map.isTraversable(newX, newY)){
+            this.x = newX;
+            this.y = newY;
             this.updatePersoPosition();
         } else {
             console.log("Erreur déplacement");

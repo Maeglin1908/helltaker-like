@@ -26,26 +26,36 @@ class Map {
         }
     }
 
-    initPersonnage() {
-        let perso = new Personnage("Pipou", Math.floor(dimension / 2), dimension - 1, this);
-        let caseInit = document.getElementById('case-' + perso.y + "-" + perso.x)
-        console.log(caseInit);
-        let divPerso = document.createElement('div');
-        divPerso.setAttribute('id', 'perso');
-        caseInit.appendChild(divPerso);
-        this.personnage = perso;
-        return perso;
-    }
-
-    initEventListeners() {
-        window.addEventListener("keyup", event => {
-            this.personnage.move(event.key);
-        });
-    }
-
     isTraversable(x, y) {
+        let exist = document.getElementById('case-' + y + '-' + x);
+        if(exist === null){
+            return false;
+        }
         let innerBlock = document.querySelector('#case-' + y + '-' + x + ' .block');
-        // if(innerBlock )
+        return innerBlock === null;
+    }
+
+    isMovable(x, y, direction){
+        let innerBlock = document.querySelector('#case-' + y + '-' + x + ' .block');
+        let nextX = x;
+        let nextY = y;
+        switch (direction) {
+            case "ArrowUp":
+                    newY--;
+                break;
+            case "ArrowDown":
+                    newY++;
+                break;
+            case "ArrowLeft":
+                    newX--;
+                break;
+            case "ArrowRight":
+                    newX++;
+                break;
+            default:
+                break;
+        }
+        //TODO
 
     }
 
