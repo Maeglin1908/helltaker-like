@@ -8,8 +8,8 @@
 #game table {
     display: table;
     border-collapse: collapse;
-    width: 630px;
-    height:630px
+    width:auto;
+    height:auto;
 }
 
 #game table tbody {

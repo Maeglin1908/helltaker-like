@@ -1,5 +1,5 @@
 // let blocks = [];
-let dimension = 15;
+let dimension = 19;
 let map = new Map(dimension);
 map.create();
 let personnage = new Personnage();
