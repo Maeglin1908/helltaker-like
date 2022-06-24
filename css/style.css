@@ -17,6 +17,42 @@
     box-sizing: border-box;
 }
 
+.block {
+    height: 100%;
+    width: 100%;
+    background: url("../Assets/Objects/Stone_Block.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.box {
+    height: 100%;
+    width: 100%;
+    background: url("../Assets/Objects/Wood_Block.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.ladder {
+    height: 100%;
+    width: 100%;
+    background: url("../Assets/Objects/Ladder_Black_Background.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.star {
+    height: 100%;
+    width: 100%;
+    background: url("../Assets/Objects/star.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
 .gr-0{
     background: url("../Assets/Environnement/grass_0.png") no-repeat;
     background-position: center;
