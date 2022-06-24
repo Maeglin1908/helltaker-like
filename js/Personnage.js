@@ -50,7 +50,7 @@ class Personnage {
 
     updatePersoPosition(){
         let casePerso = document.getElementById('perso');
-        let caseTarget = document.getElementById(this.y + "-" + this.x);
+        let caseTarget = document.getElementById('case-' + this.y + "-" + this.x);
         casePerso.remove();
         caseTarget.appendChild(casePerso);
     }
