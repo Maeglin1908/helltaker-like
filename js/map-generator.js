@@ -28,35 +28,55 @@ class Map {
 
     isTraversable(x, y) {
         let exist = document.getElementById('case-' + y + '-' + x);
-        if(exist === null){
+        if (exist === null) {
             return false;
         }
+        for (let e of Array.from(exist.children)) {
+            if (Array.from(e.classList).indexOf('ladder') != -1) {
+                return true;
+            }
+        };
         let innerBlock = document.querySelector('#case-' + y + '-' + x + ' .block');
         return innerBlock === null;
     }
 
-    isMovable(x, y, direction){
-        let innerBlock = document.querySelector('#case-' + y + '-' + x + ' .block');
-        let nextX = x;
-        let nextY = y;
+    isMovable(x, y, direction) {
+        let box = document.querySelector('#case-' + y + '-' + x + ' .box');
+        if (box === null) {
+            return false;
+        }
+        let newX = x;
+        let newY = y;
         switch (direction) {
             case "ArrowUp":
-                    newY--;
+            case "z":
+                newY--;
                 break;
             case "ArrowDown":
-                    newY++;
+            case "s":
+                newY++;
                 break;
             case "ArrowLeft":
-                    newX--;
+            case "q":
+                newX--;
                 break;
             case "ArrowRight":
-                    newX++;
+            case "d":
+                newX++;
                 break;
             default:
                 break;
         }
         //TODO
-
+        let asideTileExist = document.querySelector('#case-' + newY + '-' + newX);
+        if (asideTileExist === null) {
+            return false;
+        }
+        let asideTile = document.querySelector('#case-' + newY + '-' + newX + ' .block');
+        if (asideTile === null) {
+            return true;
+        }
+        return false;
     }
 
     populateBackground() {
@@ -97,6 +117,18 @@ class Map {
             }
             e.classList.add(backgroundGen);
         })
+    }
+
+    isWin() {
+        let isWin = document.querySelector('.ladder+#perso');
+        if (isWin !== null) {
+            let winDiv = document.createElement('div');
+            winDiv.setAttribute('id', 'win');
+            winDiv.innerHTML = "YOU WIN";
+
+            document.querySelector('#map tbody').appendChild(winDiv);
+            window.removeEventListener("keyup", handleKeyupEvent);
+        }
     }
 
 }
