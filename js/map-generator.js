@@ -105,34 +105,57 @@ class Map {
         let backgroundGen = 0;
         Array.from(document.getElementsByTagName("td")).forEach((e) => {
             let [, y, x] = e.id.split("-");
-            let grassMin = Math.floor(this.width / 3);
-            let grassMax = grassMin * 2;
-            if (x != 0 && y == 0 && x != this.width - 1) {
+            let grassMin = Math.floor((this.width) / 3);
+            let grassMax = Math.floor(grassMin*2);
+            if(x!=0&&y==0&&x!=this.width-1){
                 backgroundGen = "wallUp";
-                e.classList.add("block");
-            } else if (y == this.height - 1 && x != 0 && x != this.width - 1) {
-                e.classList.add("block");
+                let divWall = document.createElement('div');
+                divWall.classList.add("block");
+                divWall.classList.add("wallUp");
+                e.appendChild(divWall);
+            }else if(y==this.height-1&&x!=0&&x!=this.width-1){
+                let divWall = document.createElement('div');
+                divWall.classList.add("block");
+                divWall.classList.add("wallDown");
+                e.appendChild(divWall);
                 backgroundGen = "wallDown";
-            } else if (x == 0 && y != 0 && y != this.height - 1) {
-                e.classList.add("block");
+            }else if(x==0 && y!=0 && y != this.height-1){
+                let divWall = document.createElement('div');
+                divWall.classList.add("block");
+                divWall.classList.add("wallLeft");
+                e.appendChild(divWall);
                 backgroundGen = "wallLeft";
-            } else if (x == this.width - 1 && y != 0 && y != this.height - 1) {
-                e.classList.add("block");
-                backgroundGen = "wallRight";
-                e.classList.add("reverse-270");
-            } else if (x == 0 && y == 0) {
+            }else if(x==this.width-1 && y!=0&&y!=this.height-1){
+                let divWall = document.createElement('div');
+                divWall.classList.add("block");
+                divWall.classList.add("wallRight");
+                e.appendChild(divWall);
+                backgroundGen = "wallRight";         
+            }else if(x==0 && y==0){
                 backgroundGen = "cornerUL";
-                e.classList.add("block");
-            } else if (x == this.width - 1 && y == 0) {
+                let divCorner = document.createElement('div');
+                divCorner.classList.add("block");
+                divCorner.classList.add("cornerUL");
+                e.appendChild(divCorner);
+            }else if(x==this.width-1 && y==0){
                 backgroundGen = "cornerUR";
-                e.classList.add("block");
-            } else if (x == 0 && y == this.height - 1) {
+                let divCorner = document.createElement('div');
+                divCorner.classList.add("block");
+                divCorner.classList.add("cornerUR");
+                e.appendChild(divCorner);
+            }else if(x==0 && y==this.height-1){
                 backgroundGen = "cornerDL";
-                e.classList.add("block");
-            } else if (x == this.width - 1 && y == this.height - 1) {
+                let divCorner = document.createElement('div');
+                divCorner.classList.add("block");
+                divCorner.classList.add("cornerDL");
+                e.appendChild(divCorner);
+            }else if(x==this.width-1 && y==this.height-1){
                 backgroundGen = "cornerDR";
-                e.classList.add("block");
-            } else if (grassMin <= x && x < grassMax) {
+                let divCorner = document.createElement('div');
+                divCorner.classList.add("block");
+                divCorner.classList.add("cornerDR");
+                e.appendChild(divCorner);
+            }else if (grassMin <= x && x < grassMax) {
                 backgroundGen = "pt-" + Math.floor(Math.random() * 7);
             } else {
                 backgroundGen = "gr-" + Math.floor(Math.random() * 7);
