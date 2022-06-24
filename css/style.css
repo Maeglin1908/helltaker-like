@@ -1,12 +1,14 @@
 #game table tr td {
     /* border: 1px solid black; */
-    height: 40px;
-    width: 40px;
+    height: 40px!important;
+    width: 40px!important;
 }
 
 #game table {
     display:table;
     border-collapse: collapse;
+    width: 630px;
+    height:630px
 }
 
 #perso {
@@ -134,6 +136,54 @@
 
 .pt-6{
     background: url("../Assets/Environnement/path_6.png") no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.wallUp{
+    background: url("../Assets/Objects/WallUp.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wallDown{
+    background: url("../Assets/Objects/WallDown.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wallRight{
+    background: url("../Assets/Objects/WallRight.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wallLeft{
+    background: url("../Assets/Objects/WallLeft.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cornerUL{
+    background: url("../Assets/Objects/CornerUL.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cornerUR{
+    background: url("../Assets/Objects/CornerUR.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cornerDR{
+    background: url("../Assets/Objects/CornerDR.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cornerDL{
+    background: url("../Assets/Objects/CornerDL.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
