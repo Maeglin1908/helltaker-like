@@ -1,6 +1,6 @@
 // let blocks = [];
 let personnage; // = new Personnage();
-let map = new Map(1);
+let map = new Map(4);
 map.create();
 map.populateBackground();
 
